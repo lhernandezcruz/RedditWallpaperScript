@@ -1,7 +1,7 @@
 import urllib, obot, datetime, ctypes, os
 
 #can change subreddit to something else... ex: gonewild...jk lol
-sub = "wallpapers"
+sub = "Wallpaper"
 
 # SPI_SETDESKWALLPAPER is used to set as wallpaper in Windows
 SPI_SETDESKWALLPAPER = 20 
@@ -13,9 +13,6 @@ filename =  day + ".jpg"
 
 # path is the path of where the file is
 path = os.path.dirname(os.path.abspath(__file__))
-
-
-
     
 # log on to reddit
 print "Logging into reddit"
@@ -46,7 +43,7 @@ def downloadImage(imageUrl, localFileName):
 def setBackground(localFileName): 
     print ("Attempting to Set as Wallpaper")
     imgPath = os.path.join(path, localFileName)
-    ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, imgPath , 0)
+    ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, imgPath  , 3)
     print "Set as Wallpaper"
     
 """
@@ -65,18 +62,16 @@ def getImages():
         url = post.url
         
         # make sure it is an imgur image only
-        # currently doesn't work with i.imgur links or albums
+        # currently doesn't work with albums
         if "imgur.com/" not in url:
             continue
         if "http://imgur.com/a/" in url:
             continue
-        if "http://i.imgur.com" in url:
-            continue
         
         # if it got here it is imgur... download it
-        print "Found Imgur Picture. URL: " + url 
+        print "Found Imgur Picture. URL: " + url
         
-        # if it is downloaded... set as wallpaper and stop searching
+        # if it is jpg...downlaod and set as wallpaper and stop searching
         if ".jpg" in url:
             downloadImage(url,filename)
             setBackground(os.path.join("images", filename))
@@ -85,6 +80,6 @@ def getImages():
             downloadImage(url  + ".jpg",filename)
             setBackground(os.path.join("images", filename))
             break
-            
+        
 getImages()
     
