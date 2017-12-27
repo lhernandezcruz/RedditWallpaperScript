@@ -1,13 +1,14 @@
 # RedditWallpaperScript
 Python script that gets an image from top post of day (of a subreddit) and sets it as destkop wallpaper. 
 
-### Currently only tested on Windows 10
-
 ## Setup
 ### Requires Python
 Runs on Python 3.3 to 3.6. Python 3.6 (comes with pip) can be downloaded here: https://www.python.org/downloads/.
 ### Requires Praw
 Praw can be installed using the command: `pip install praw`
+
+### Currently only tested on Windows 10 64-bit, Python 3.6.2, Praw 5.4.0
+
 
 ### Requires a Reddit account and an "app"
 To create a Reddit account go to https://www.reddit.com/register/. 
