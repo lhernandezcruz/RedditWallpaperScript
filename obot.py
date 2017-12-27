@@ -1,10 +1,10 @@
 import praw
 
-username = ''
-password = ''
-ua = '' 
-app_id = ''
-app_secret = ''
+username = ""
+password = ""
+ua = "searches for images in subreddits by /u/hipereeon" 
+app_id = ""
+app_secret = ""
 
 def login():
     r = praw.Reddit(client_id = app_id,
