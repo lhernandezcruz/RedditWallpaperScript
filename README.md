@@ -1,5 +1,5 @@
-# imgurWallpaper
-Python script that gets an imgur image from top post of day (of a subreddit) and sets it as wallpaper. 
+# RedditWallpaperScript
+Python script that gets an image from top post of day (of a subreddit) and sets it as destkop wallpaper. 
 
 ### Currently only tested on Windows 10
 
